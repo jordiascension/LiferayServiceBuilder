@@ -30,15 +30,6 @@ public class LibroLocalServiceWrapper
 		_libroLocalService = libroLocalService;
 	}
 
-	@Override
-	public void addEscritor(
-		long groupId, long companyId, long userId, String userName,
-		String nombre, String titulo, String escritor) {
-
-		_libroLocalService.addEscritor(
-			groupId, companyId, userId, userName, nombre, titulo, escritor);
-	}
-
 	/**
 	 * Adds the libro to the database. Also notifies the appropriate model listeners.
 	 *
