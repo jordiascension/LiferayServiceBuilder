@@ -63,6 +63,9 @@ public interface LibroLocalService
 	 *
 	 * Never modify this interface directly. Add custom service methods to <code>com.sinensia.business.service.impl.LibroLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the libro local service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link LibroLocalServiceUtil} if injection and service tracking are not available.
 	 */
+	public void addEscritor(
+		long groupId, long companyId, long userId, String userName,
+		String nombre, String titulo, String escritor);
 
 	/**
 	 * Adds the libro to the database. Also notifies the appropriate model listeners.

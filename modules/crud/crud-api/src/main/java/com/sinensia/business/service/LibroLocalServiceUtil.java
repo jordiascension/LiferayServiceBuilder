@@ -44,6 +44,13 @@ public class LibroLocalServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to <code>com.sinensia.business.service.impl.LibroLocalServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
+	public static void addEscritor(
+		long groupId, long companyId, long userId, String userName,
+		String nombre, String titulo, String escritor) {
+
+		getService().addEscritor(
+			groupId, companyId, userId, userName, nombre, titulo, escritor);
+	}
 
 	/**
 	 * Adds the libro to the database. Also notifies the appropriate model listeners.
