@@ -1,0 +1,10 @@
+Bundle-Name: crud-service-api
+Bundle-SymbolicName: com.vueling.business.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.vueling.business.exception,\
+	com.vueling.business.model,\
+	com.vueling.business.service,\
+	com.vueling.business.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../crud-service-service/service.xml
