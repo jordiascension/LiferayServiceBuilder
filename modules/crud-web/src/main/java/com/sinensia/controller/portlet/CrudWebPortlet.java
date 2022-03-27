@@ -1,8 +1,9 @@
 package com.sinensia.controller.portlet;
 
 import com.sinensia.controller.constants.CrudWebPortletKeys;
-
+import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 
 import javax.portlet.ActionRequest;
@@ -42,6 +43,21 @@ public class CrudWebPortlet extends MVCPortlet {
 	    	 Long companyId = themeDisplay.getCompanyId();
 	    	 Long groupId = themeDisplay.getScopeGroupId();
 	    	 Long userId = themeDisplay.getUserId();
+	    	 User user = themeDisplay.getUser();
+	    	 String userName = user.getFirstName();
+	    	 String nombre = user.getFullName();
+	    	 String titulo = "El mentalista";
+	    	 String escritor = "Camilla Lackberg";
+	    	 
+	    	 System.out.println(userName + " " + nombre);
+	    	 //Cuando se realize un cambio en el servicio
+	    	 //tenemos que hacer un deploy para refrescar
+	    	 //las librería del servicio
+	    	 //compile project(":modules:crud:crud-api")
+	    	 //crud-service, crud-api, crud, crud-web
+	    	 
+	    	 LibroLocalServiceUtil.addNewLibro(groupId, companyId, userId, userName, nombre, titulo, escritor);
+	    	 SessionMessages.add(request, "success");
 	        
 	    	
 	    }
